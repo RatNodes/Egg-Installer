@@ -2,16 +2,16 @@
 
 namespace Database\Seeders;
 
-use Pterodactyl\Models\Nest;
+use Jexactyl\Models\Nest;
 use Illuminate\Database\Seeder;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
 use Illuminate\Filesystem\Filesystem;
-use Pterodactyl\Services\Eggs\Sharing\EggImporterService;
-use Pterodactyl\Contracts\Repository\EggRepositoryInterface;
-use Pterodactyl\Contracts\Repository\NestRepositoryInterface;
-use Pterodactyl\Exceptions\Repository\RecordNotFoundException;
-use Pterodactyl\Services\Eggs\Sharing\EggUpdateImporterService;
+use Jexactyl\Services\Eggs\Sharing\EggImporterService;
+use Jexactyl\Contracts\Repository\EggRepositoryInterface;
+use Jexactyl\Contracts\Repository\NestRepositoryInterface;
+use Jexactyl\Exceptions\Repository\RecordNotFoundException;
+use Jexactyl\Services\Eggs\Sharing\EggUpdateImporterService;
 
 class EggSeeder extends Seeder
 {
@@ -21,22 +21,22 @@ class EggSeeder extends Seeder
     private $filesystem;
 
     /**
-     * @var \Pterodactyl\Services\Eggs\Sharing\EggImporterService
+     * @var \Jexactyl\Services\Eggs\Sharing\EggImporterService
      */
     private $importerService;
 
     /**
-     * @var \Pterodactyl\Contracts\Repository\NestRepositoryInterface
+     * @var \Jexactyl\Contracts\Repository\NestRepositoryInterface
      */
     private $nestRepository;
 
     /**
-     * @var \Pterodactyl\Contracts\Repository\EggRepositoryInterface
+     * @var \Jexactyl\Contracts\Repository\EggRepositoryInterface
      */
     private $repository;
 
     /**
-     * @var \Pterodactyl\Services\Eggs\Sharing\EggUpdateImporterService
+     * @var \Jexactyl\Services\Eggs\Sharing\EggUpdateImporterService
      */
     private $updateImporterService;
 
@@ -109,12 +109,12 @@ class EggSeeder extends Seeder
     /**
      * Find the nest that these eggs should be attached to.
      *
-     * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
+     * @throws \Jexactyl\Exceptions\Repository\RecordNotFoundException
      */
     private function findMatchingNest(string $nestName): Nest
     {
         return $this->nestRepository->findFirstWhere([
-            ['author', '=', 'support@pterodactyl.io'],
+            ['author', '=', 'support@Jexactyl.io'],
             ['name', '=', $nestName],
         ]);
     }

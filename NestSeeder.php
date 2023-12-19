@@ -3,18 +3,18 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Pterodactyl\Services\Nests\NestCreationService;
-use Pterodactyl\Contracts\Repository\NestRepositoryInterface;
+use Jexactyl\Services\Nests\NestCreationService;
+use Jexactyl\Contracts\Repository\NestRepositoryInterface;
 
 class NestSeeder extends Seeder
 {
     /**
-     * @var \Pterodactyl\Services\Nests\NestCreationService
+     * @var \Jexactyl\Services\Nests\NestCreationService
      */
     private $creationService;
 
     /**
-     * @var \Pterodactyl\Contracts\Repository\NestRepositoryInterface
+     * @var \Jexactyl\Contracts\Repository\NestRepositoryInterface
      */
     private $repository;
 
@@ -32,12 +32,12 @@ class NestSeeder extends Seeder
     /**
      * Run the seeder to add missing nests to the Panel.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     public function run()
     {
         $items = $this->repository->findWhere([
-            'author' => 'support@pterodactyl.io',
+            'author' => 'support@Jexactyl.io',
         ])->keyBy('name')->toArray();
 
         $this->createSourceEngineNest(array_get($items, 'Source Engine'));
@@ -75,7 +75,7 @@ class NestSeeder extends Seeder
     /**
      * Create the Source Engine Games nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createSourceEngineNest(array $nest = null)
     {
@@ -83,14 +83,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Source Engine',
                 'description' => 'Includes support for most Source Dedicated Server games.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Voice Servers nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createVoiceServersNest(array $nest = null)
     {
@@ -98,14 +98,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Voice Servers',
                 'description' => 'Voice servers such as Mumble and Teamspeak 3.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Rust nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createRustNest(array $nest = null)
     {
@@ -113,14 +113,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Rust',
                 'description' => 'Rust - A game where you must fight to survive.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Among Us nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createAmongUsNest(array $nest = null)
     {
@@ -128,14 +128,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Among Us',
                 'description' => 'Among Us - A 2D game where you are either a crewmate completing tasks or an impostor sabotaging the crewmates.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the BeamMP nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createBeamMPNest(array $nest = null)
     {
@@ -143,14 +143,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'BeamMP',
                 'description' => 'BeamMP - Allows for stable servers, with a variety of servers located accross the globe.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the BeamNG nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createBeamNGNest(array $nest = null)
     {
@@ -158,14 +158,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'BeamNG',
                 'description' => 'BeamNG.drive - An incredibly realistic driving game with near-limitless possibilities.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Bots nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createBotsNest(array $nest = null)
     {
@@ -173,14 +173,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Bots',
                 'description' => 'Bots - A variety of different bots to fulfill your needs.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the COD nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createCallofDutyNest(array $nest = null)
     {
@@ -188,14 +188,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Call of Duty',
                 'description' => 'Call of Duty - A first-person shooter video game franchise published by Activision.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the CryoFall nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createCryoFallNest(array $nest = null)
     {
@@ -203,14 +203,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'CryoFall',
                 'description' => 'CryoFall - A 2D Sci-Fi online survival game set on a forgotten planet in the distant future.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Database nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createDatabaseNest(array $nest = null)
     {
@@ -218,14 +218,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Database',
                 'description' => 'Database - A range of different database options to choose from.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Enemy Territory nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createETLegacyNest(array $nest = null)
     {
@@ -233,14 +233,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Enemy Territory',
                 'description' => 'Enemy Territory - A free and open-source multiplayer first-person shooter video game set during World War II.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Factorio nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createFactorioNest(array $nest = null)
     {
@@ -248,14 +248,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Factorio',
                 'description' => 'Factorio - A 2D construction and management simulation game.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Faster Than Light nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createFasterThanLightNest(array $nest = null)
     {
@@ -263,14 +263,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Faster Than Light',
                 'description' => 'Faster Than Light - A 2D space-based top-down real-time strategy roguelike game.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Grand Theft Auto nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createGrandTheftAutoNest(array $nest = null)
     {
@@ -278,14 +278,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Grand Theft Auto',
                 'description' => 'Grand Theft Auto - A series of action-adventure games created by David Jones and Mike Dailly.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the League Sandbox nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createLeagueSandboxNest(array $nest = null)
     {
@@ -293,14 +293,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'League Sandbox',
                 'description' => 'League Sandbox - A gameserver for League Of Legends.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Mindustry nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createMindustryNest(array $nest = null)
     {
@@ -308,14 +308,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Mindustry',
                 'description' => 'Mindustry - A sandbox tower-defense game.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Minetest nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createMinetestNest(array $nest = null)
     {
@@ -323,14 +323,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Minetest',
                 'description' => 'Minetest - A free and open-source sandbox video game.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Openarena nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createOpenarenaNest(array $nest = null)
     {
@@ -338,14 +338,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Openarena',
                 'description' => 'Openarena - A first-person shooter, and a video game clone of Quake III Arena.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the OpenRA nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createOpenRANest(array $nest = null)
     {
@@ -353,14 +353,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'OpenRA',
                 'description' => 'OpenRA - An open source project that recreates and modernizes classic real time strategy games',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Red Dead Redemption nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createRedDeadRedemptionNest(array $nest = null)
     {
@@ -368,14 +368,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Red Dead Redemption',
                 'description' => 'Red Dead Redemption - An action-adventure game.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Software nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createSoftwareNest(array $nest = null)
     {
@@ -383,14 +383,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Software',
                 'description' => 'Software - A range of different software to host.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the StarMade nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createStarMadeNest(array $nest = null)
     {
@@ -398,14 +398,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'StarMade',
                 'description' => 'StarMade - An effectively infinite open-universe space simulation sandbox game.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Storage nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createStorageNest(array $nest = null)
     {
@@ -413,14 +413,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Storage',
                 'description' => 'Storage - A range of storage solutions for your needs.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Teeworlds nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createTeeworldsNest(array $nest = null)
     {
@@ -428,14 +428,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Teeworlds',
                 'description' => 'Teeworlds - A free, open-source sidescrolling multiplayer shooting game.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Terraria nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createTerrariaNest(array $nest = null)
     {
@@ -443,14 +443,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Terraria',
                 'description' => 'Terraria - A 2D action-adventure sandbox game.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Tycoon Games nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createTycoonGamesNest(array $nest = null)
     {
@@ -458,14 +458,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Tycoon Games',
                 'description' => 'Tycoon Games - A range of different tycoon games.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Unreal Engine nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createUnrealEngineNest(array $nest = null)
     {
@@ -473,14 +473,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Unreal Engine',
                 'description' => 'Unreal Engine - A range of different Unreal Engine games.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Veloren nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createVelorenNest(array $nest = null)
     {
@@ -488,14 +488,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Veloren',
                 'description' => 'Veloren - A open-source multi-platform voxel action role-playing game.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Vintage Story nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createVintageStoryNest(array $nest = null)
     {
@@ -503,14 +503,14 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Vintage Story',
                 'description' => 'Vintage Story - A sandbox survival game.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 
     /**
      * Create the Xonotic nest to be used later on.
      *
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
+     * @throws \Jexactyl\Exceptions\Model\DataValidationException
      */
     private function createXonoticNest(array $nest = null)
     {
@@ -518,7 +518,7 @@ class NestSeeder extends Seeder
             $this->creationService->handle([
                 'name' => 'Xonotic',
                 'description' => 'Xonotic - A free and open-source first-person shooter video game.',
-            ], 'support@pterodactyl.io');
+            ], 'support@Jexactyl.io');
         }
     }
 }
