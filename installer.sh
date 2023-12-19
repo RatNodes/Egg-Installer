@@ -8,7 +8,7 @@ fi
 cd /var/www/jexactyl/database/Seeders
 mkdir temp
 mv NestSeeder.php EggSeeder.php temp/
-curl -Lo data.zip https://github.com/JackW6809/pterodactyl-parker-eggs-install-script/releases/latest/download/data.zip
+curl -Lo data.zip https://github.com/RatNodes/Egg-Installer/releases/latest/download/data.zip
 unzip -n data.zip
 rm data.zip
 php ../../artisan migrate --seed --force
